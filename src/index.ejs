@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>TAM-TARAM</title>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fancybox/3.0.47/jquery.fancybox.min.css" />
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css"/>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+<header class="header">
+    <div class="header__top">
+
+        <div class="location-info hide-on-mobile">
+            <p class="location-info__text">
+                NEAREST SALON
+                <img src="img/ico_dropdown.svg" class="location-info__dropdown-img" alt="dropdown">
+            </p>
+            <p class="location-info__address">
+                Plush Salon 92101
+            </p>
+        </div>
+
+        <div class="top-logo">
+            <a href="/" class="top-logo__link"><%-include('img/logo.svg')%></a>
+        </div>
+
+        <form method="GET" action="/" class="search-form hide-on-mobile">
+            <input type="search" class="search-form__input">
+            <button type="submit" class="search-form__submit" disabled>
+                <img src="img/ico_search.svg" class="search-form__submit-img" alt="ico_search">
+            </button>
+        </form>
+
+    </div>
+
+    <div class="header__bottom">
+
+        <div class="location-info show-on-mobile">
+            <p class="location-info__text">
+                NEAREST SALON
+                <img src="img/ico_dropdown.svg" class="location-info__dropdown-img" alt="dropdown">
+            </p>
+            <p class="location-info__address">
+                Plush Salon 92101
+            </p>
+        </div>
+
+        <form method="GET" action="/" class="search-form show-on-mobile">
+            <input type="search" class="search-form__input">
+            <button type="submit" class="search-form__submit" disabled>
+                <img src="img/ico_search.svg" class="search-form__submit-img" alt="ico_search">
+            </button>
+        </form>
+
+        <% const menuItems = [
+            {title: 'HairCare', link: '#'},
+            {title: 'Color', link: '#'},
+            {title: 'Styling', link: '#'},
+            {title: 'Texture', link: '#'},
+            {title: 'Get Inspired', link: '#'},
+            {title: 'Social', link: '#'},
+            {title: 'News', link: '#'},
+            {title: 'About', link: '#'},
+            {title: 'Professional', link: '#'}
+        ]; %>
+
+        <div class="menu header__menu hide-on-mobile">
+            <% menuItems.forEach((item) => { %>
+            <li class="menu__item"><a class="menu__link" href="<%= item.link; %>"><%= item.title %></a></li>
+            <% }) %>
+        </div>
+    </div>
+</header>
+
+<section class="page-main">
+    <div class="breadcrumbs">
+        <% const breadcrumbsItems = [
+            {title: 'HOME', active: false, link: '#'},
+            {title: 'VIDEOS', active: true, link: '#'}
+        ]; %>
+
+        <ul class="breadcrumbs__list">
+            <% breadcrumbsItems.forEach((item) => { %>
+                <li class="breadcrumbs__item">
+                    <a class="breadcrumbs__link <%= item.active ? 'breadcrumbs__link_active' : ''; %>" href="<%= item.link %>"><%= item.title %></a>
+                </li>
+                <% if(item.active === false) { %>
+                    <li class="breadcrumbs__item breadcrumbs__separator">/</li>
+                <% } %>
+            <% }) %>
+        </ul>
+    </div>
+
+    <div class="container">
+        <div class="block_primary">
+            <div class="title title_primary">
+                <h1 class="title__text title__text_primary">VIDEOS</h1>
+            </div>
+
+            <div class="video-block">
+                <div class="video-block__item video-block__item_primary">
+                    <a href="https://youtu.be/z8M0Fa1JVco" class="video-block__link">
+                        <picture>
+                            <source srcset="//img.youtube.com/vi/z8M0Fa1JVco/maxresdefault.jpg" media="(min-width: 769px)">
+                            <img src="//img.youtube.com/vi/z8M0Fa1JVco/mqdefault.jpg" class="video-block__cover" alt="cover">
+                        </picture>
+                        <img class="video-block__play video-block__play_primary" src="img/ico_play.svg" alt="play">
+                    </a>
+                </div>  
+            </div>
+
+            <div class="block-content block-content_primary">
+                <p class="block-content__text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque lobortis, nisl at ullamcorper egestas, felisadi piscing dolor, a interdum lorem urna quis magna.
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="block_secondary">
+            <div class="title">
+                <h2 class="title__text">step <span class="title__text_highlight">by</span> step</h2>
+            </div>
+
+            <div class="video-block">
+                <% const stepByStepVideos = [
+                    'Wi2KcdoCuo4', 
+                    '8H6dYUgQKB8', 
+                    'PZjGrmHdFME', 
+                    '_wLGr24VeoI', 
+                    'DG4FAU5qmMY'
+                ]; %>
+                <div class="slick-init">
+                    <% stepByStepVideos.forEach((item) => { %>
+                    <div class="video-block__item">
+                        <a href="https://youtu.be/<%= item %>" class="video-block__link">
+                            <img src="//img.youtube.com/vi/<%= item %>/mqdefault.jpg" class="video-block__cover" alt="cover">
+                            <img class="video-block__play" src="img/ico_play.svg" alt="play">
+                        </a>
+                    </div>
+                    <% })%>
+                </div>
+            </div>
+
+            <div class="load-more-block">
+                <button class="load-more-block__button show-on-mobile">LOAD MORE</button>                
+            </div>
+
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="block_secondary">
+
+            <div class="title">
+                <h2 class="title__text">craft <span class="title__text_highlight">education</span></h2>
+            </div>
+
+            <div class="video-block">
+                <% const educationVideos = [
+                    'RmNWNLXmswk', 
+                    '-tztXOz8Vc0', 
+                    'kUfIVtyydgQ'
+                ]; %>
+                <div class="slick-init">
+                    <% educationVideos.forEach((item) => { %>
+                    <div class="video-block__item">
+                        <a href="https://youtu.be/<%= item %>" class="video-block__link">
+                            <img src="//img.youtube.com/vi/<%= item %>/mqdefault.jpg" class="video-block__cover" alt="cover">
+                            <img class="video-block__play" src="img/ico_play.svg" alt="play">
+                        </a>
+                    </div>
+                    <% })%>
+                </div>
+            </div>
+
+            <div class="load-more-block">
+                <button class="load-more-block__button show-on-mobile">LOAD MORE</button>                
+            </div>
+
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="block_secondary">
+            
+            <div class="title">
+                <h2 class="title__text">inspiration</h2>
+            </div>
+
+            <div class="video-block">
+                <% const inspirationVideos = [
+                    'VmmwwzR536g', 
+                    'vz0k8O-Ef9Y', 
+                    '6oPBFnsqJW8'
+                ]; %>
+                <div class="slick-init">
+                    <% inspirationVideos.forEach((item) => { %>
+                    <div class="video-block__item">
+                        <a href="https://youtu.be/<%= item %>" class="video-block__link">
+                            <img src="//img.youtube.com/vi/<%= item %>/mqdefault.jpg" class="video-block__cover" alt="cover">
+                            <img class="video-block__play" src="img/ico_play.svg" alt="play">
+                        </a>
+                    </div>
+                    <% })%>
+                </div>
+            </div>
+
+            <div class="load-more-block">
+                <button class="load-more-block__button show-on-mobile">LOAD MORE</button>                
+            </div>
+
+        </div>
+    </div>
+
+</section>
+
+<footer class="footer">
+    <div class="footer__item social-menu">
+        <ul class="social-menu__list">
+
+            <% const socialMenuItems = [
+                {title: 'facebook', link: '#'},
+                {title: 'twitter', link: '#'},
+                {title: 'pinterest', link: '#'},
+                {title: 'youtube', link: '#'},
+                {title: 'instagram', link: '#'}
+            ]; %>
+
+            <% socialMenuItems.forEach((item) => { %>
+            <li class="social-menu__item">
+                <a class="social-menu__link" href="<%= item.link %>">
+                    <img class="social-menu__img" src="img/ico_<%= item.title %>.svg" alt="<%= item.title %>">
+                </a>
+            </li>
+            <% }) %>
+        </ul>
+    </div>
+
+    <div class="footer__item switch-block">
+        <div class="location-switch">
+            <p class="switch-block__text location-switch__text">
+                LOCATION: <span class="switch-block__text_highlight">UNITED STATES</span>
+            </p>
+        </div>
+
+        <div class="language-switch">
+            <p class="switch-block__text language-switch__text">
+                LANGUAGE: <span class="switch-block__text_highlight">ENGLISH</span>
+            </p>
+        </div>
+    </div>
+
+    <div class="footer__item menu-bottom">
+        <ul class="menu-bottom__list">
+            <% const bottomMenuItems = [
+                {title: 'PRIVACY POLICY', link: '#'},
+                {title: 'TERMS OF USE', link: '#'},
+                {title: 'CONTACT US', link: '#'},
+                {title: 'NEWSLETTER', link: '#'},
+                {title: 'SITEMAP', link: '#'}
+            ]; %>
+
+            <% bottomMenuItems.forEach((item) => { %>
+            <li class="menu-bottom__item">
+                <a class="menu-bottom__link" href="<%= item.link %>"><%= item.title %></a>
+            </li>
+        <% }) %>
+        </ul>
+    </div>
+
+</footer>
+
+
+<script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/3.0.47/jquery.fancybox.min.js"></script>
+<script src="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
+<script src="js/scripts.js"></script>
+</body>
+</html>
