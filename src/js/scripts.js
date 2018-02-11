@@ -22,6 +22,7 @@ $( document ).ready(function() {
             }
         ]
     });
+
 });
 
 htmlWindow.resize(function() {
@@ -35,15 +36,11 @@ htmlWindow.on('orientationchange', function() {
 $(".search-form").click(function(){
     $(this).addClass("search-form_active");
 
-    let input = $(this).find('.search-form__input');
-    let sumbitButton = $(this).find('search-form__submit');
+    const input = $(this).find('.search-form__input');
+    const sumbitButton = $(this).find('search-form__submit');
 
     input.mousedown(function(){
         sumbitButton.prop('disabled', false);
     });
 
-});
-
-$(".video-block__link").fancybox({
-    type: 'iframe'
 });

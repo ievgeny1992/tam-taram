@@ -104,7 +104,7 @@
 
             <div class="video-block">
                 <div class="video-block__item video-block__item_primary">
-                    <a href="https://youtu.be/z8M0Fa1JVco" class="video-block__link">
+                    <a href="//youtu.be/z8M0Fa1JVco&showinfo=0" class="video-block__link" data-fancybox>
                         <picture>
                             <source srcset="//img.youtube.com/vi/z8M0Fa1JVco/maxresdefault.jpg" media="(min-width: 769px)">
                             <img src="//img.youtube.com/vi/z8M0Fa1JVco/mqdefault.jpg" class="video-block__cover" alt="cover">
@@ -140,7 +140,7 @@
                 <div class="slick-init">
                     <% stepByStepVideos.forEach((item) => { %>
                     <div class="video-block__item">
-                        <a href="https://youtu.be/<%= item %>" class="video-block__link">
+                        <a href="//youtu.be/<%= item %>&showinfo=0" class="video-block__link" data-fancybox>
                             <img src="//img.youtube.com/vi/<%= item %>/mqdefault.jpg" class="video-block__cover" alt="cover">
                             <img class="video-block__play" src="img/ico_play.svg" alt="play">
                         </a>
@@ -172,7 +172,7 @@
                 <div class="slick-init">
                     <% educationVideos.forEach((item) => { %>
                     <div class="video-block__item">
-                        <a href="https://youtu.be/<%= item %>" class="video-block__link">
+                        <a href="//youtu.be/<%= item %>&showinfo=0" class="video-block__link" data-fancybox>
                             <img src="//img.youtube.com/vi/<%= item %>/mqdefault.jpg" class="video-block__cover" alt="cover">
                             <img class="video-block__play" src="img/ico_play.svg" alt="play">
                         </a>
@@ -204,7 +204,7 @@
                 <div class="slick-init">
                     <% inspirationVideos.forEach((item) => { %>
                     <div class="video-block__item">
-                        <a href="https://youtu.be/<%= item %>" class="video-block__link">
+                        <a href="//youtu.be/<%= item %>&showinfo=0" class="video-block__link" data-fancybox>
                             <img src="//img.youtube.com/vi/<%= item %>/mqdefault.jpg" class="video-block__cover" alt="cover">
                             <img class="video-block__play" src="img/ico_play.svg" alt="play">
                         </a>
@@ -247,13 +247,13 @@
     <div class="footer__item switch-block">
         <div class="location-switch">
             <p class="switch-block__text location-switch__text">
-                LOCATION: <span class="switch-block__text_highlight">UNITED STATES</span>
+                LOCATION: <a href="#" class="switch-block__text_highlight">UNITED STATES</a>
             </p>
         </div>
 
         <div class="language-switch">
             <p class="switch-block__text language-switch__text">
-                LANGUAGE: <span class="switch-block__text_highlight">ENGLISH</span>
+                LANGUAGE: <a href="#" class="switch-block__text_highlight">ENGLISH</a>
             </p>
         </div>
     </div>
