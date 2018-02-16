@@ -37,7 +37,7 @@ $(".search-form").click(function(){
     $(this).addClass("search-form_active");
 
     const input = $(this).find('.search-form__input');
-    const sumbitButton = $(this).find('search-form__submit');
+    const sumbitButton = $(this).find('.search-form__submit');
 
     input.mousedown(function(){
         sumbitButton.prop('disabled', false);
